@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: page.lang | default: 'id | ID' }}">
+
+  {% include /mobile/head.html %}
+
+  <body>
+
+    <main class="main" aria-label="Content">
+      {{ content }}
+    </main>
+  {% include mobileUIGuard.html %}
+  </body>
+</html>

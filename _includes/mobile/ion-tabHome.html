@@ -1,0 +1,26 @@
+
+  <ion-tab tab="home">
+    <ion-nav id="home-nav"></ion-nav>
+    <div id="home-page">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Home</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content id="card-container" class="ion-padding">
+      </ion-content>
+    </div>
+  </ion-tab>
+  <script>
+    // Fetch konten HTML eksternal dan sisipkan ke kontener
+    fetch('/mobile/fetch/card.html')
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(html) {
+        document.getElementById('card-container').innerHTML = html;
+      })
+      .catch(function(err) {
+        console.error('Gagal memuat konten:', err);
+      });
+  </script>

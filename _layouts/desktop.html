@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: page.lang | default: 'id | ID' }}">
+
+  {% include /desktop/head.html %}
+
+  <body class="bg-dark">
+
+  {% include /desktop/sidebar.html %}
+    <main class="main" aria-label="Content">
+  {% include /desktop/navbar.html %}
+      {{ content }}
+    </main>
+  {% include desktopUIGuard.html %}
+  <script src="{{ '/assets/vendor/bootstrap/@popperjs/core/dist/umd/popper.min.js' | relative_url }}"></script>
+  </body>
+</html>

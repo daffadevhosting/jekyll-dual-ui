@@ -1,0 +1,45 @@
+---
+layout: mobile
+title: Mobile UI
+permalink: /mobile
+---
+
+<style>
+  .example-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+</style>
+
+<ion-tabs>
+  {% include /mobile/ion-tabHome.html %}
+  {% include /mobile/ion-tabUsers.html %}
+  {% include /mobile/ion-tabWifi.html %}
+  {% include /mobile/ion-tabSetting.html %}
+  {% include /mobile/ion-tabWallet.html %}
+  {% include /mobile/tabBarBottom.html %}
+</ion-tabs>
+
+<script>
+  const homeNav = document.querySelector('#home-nav');
+  const homePage = document.querySelector('#home-page');
+  homeNav.root = homePage;
+
+  const peopleNav = document.querySelector('#people-nav');
+  const peoplePage = document.querySelector('#people-page');
+  peopleNav.root = peoplePage;
+
+  const wifiNav = document.querySelector('#wifi-nav');
+  const wifiPage = document.querySelector('#wifi-page');
+  wifiNav.root = wifiPage;
+
+  const settingNav = document.querySelector('#setting-nav');
+  const settingPage = document.querySelector('#setting-page');
+  settingNav.root = settingPage;
+
+  const walletNav = document.querySelector('#wallet-nav');
+  const walletPage = document.querySelector('#wallet-page');
+  walletNav.root = walletPage;
+</script>

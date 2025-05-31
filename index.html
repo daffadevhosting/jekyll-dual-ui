@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<script>
+  const path = window.location.pathname;
+
+  const isMobile = window.innerWidth <= 768;
+
+  if (path('/mobile') && !isMobile) {
+    location.reload(); // atau ganti ke "/desktop/"
+  }
+
+  if (path('/desktop') && isMobile) {
+    location.reload(); // atau ganti ke "/mobile/"
+  }
+
+  if (!localStorage.getItem('uiRedirected')) {
+    localStorage.setItem('uiRedirected', 'true');
+
+    if (isMobile) {
+      window.location.href = "/mobile";
+    } else {
+      window.location.href = "/desktop";
+    }
+  }
+</script>
