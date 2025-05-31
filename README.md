@@ -61,9 +61,16 @@ Boilerplate **Jekyll** yang memiliki **dua tampilan antarmuka (UI)** terpisah:
    gem install jekyll bundler
    ```
 
-2. **Clone repo ini dan jalankan**:
+2. **Clone repo ini**
+
+    ```bash
+    git clone https://github.com/daffadevhosting/jekyll-dual-ui.git
+    ```
+
+   **dan jalankan**:
 
    ```bash
+   cd jekyll-dual-ui
    bundle install
    bundle exec jekyll serve
    ```
