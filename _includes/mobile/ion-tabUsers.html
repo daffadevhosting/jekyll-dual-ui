@@ -6,8 +6,20 @@
           <ion-title>people</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <div class="example-content">People content</div>
+      <ion-content id="user-container" class="ion-padding">
       </ion-content>
     </div>
   </ion-tab>
+  <script>
+    // Fetch konten HTML eksternal dan sisipkan ke kontener
+    fetch('/mobile/fetch/usersContent.html')
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(html) {
+        document.getElementById('user-container').innerHTML = html;
+      })
+      .catch(function(err) {
+        console.error('Gagal memuat konten:', err);
+      });
+  </script>

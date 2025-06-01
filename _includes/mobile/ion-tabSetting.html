@@ -6,8 +6,20 @@
           <ion-title>Setting</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <div class="example-content">Setting content</div>
+      <ion-content id="setting-container" class="ion-padding">
       </ion-content>
     </div>
   </ion-tab>
+  <script>
+    // Fetch konten HTML eksternal dan sisipkan ke kontener
+    fetch('/mobile/fetch/settingContent.html')
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(html) {
+        document.getElementById('setting-container').innerHTML = html;
+      })
+      .catch(function(err) {
+        console.error('Gagal memuat konten:', err);
+      });
+  </script>

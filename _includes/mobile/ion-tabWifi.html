@@ -6,8 +6,20 @@
           <ion-title>Wifi</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <div class="example-content">Wifi kontent</div>
+      <ion-content id="wifi-container" class="ion-padding">
       </ion-content>
     </div>
   </ion-tab>
+  <script>
+    // Fetch konten HTML eksternal dan sisipkan ke kontener
+    fetch('/mobile/fetch/wifiContent.html')
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(html) {
+        document.getElementById('wifi-container').innerHTML = html;
+      })
+      .catch(function(err) {
+        console.error('Gagal memuat konten:', err);
+      });
+  </script>

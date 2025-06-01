@@ -6,8 +6,20 @@
           <ion-title>Wallet</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <div class="example-content">Wallet kontent</div>
+      <ion-content id="wallet-container" class="ion-padding">
       </ion-content>
     </div>
   </ion-tab>
+  <script>
+    // Fetch konten HTML eksternal dan sisipkan ke kontener
+    fetch('/mobile/fetch/walletContent.html')
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(html) {
+        document.getElementById('wallet-container').innerHTML = html;
+      })
+      .catch(function(err) {
+        console.error('Gagal memuat konten:', err);
+      });
+  </script>
