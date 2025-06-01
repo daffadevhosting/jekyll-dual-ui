@@ -6,20 +6,35 @@
           <ion-title>Setting</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content id="setting-container" class="ion-padding">
+      <ion-content class="ion-padding">
+
+        <!-- Spinner tampil saat fetch berjalan -->
+        <div id="spinner-container">
+          <ion-spinner class="center-content" name="crescent"></ion-spinner>
+        </div>
+
+        <!-- Card akan dimuat ke sini -->
+        <div id="setting-container" style="display: none;"></div>
+
       </ion-content>
     </div>
   </ion-tab>
+
   <script>
-    // Fetch konten HTML eksternal dan sisipkan ke kontener
+    // Ambil card.html dan tampilkan
     fetch('/mobile/fetch/settingContent.html')
       .then(function(response) {
         return response.text();
       })
       .then(function(html) {
-        document.getElementById('setting-container').innerHTML = html;
+        // Sembunyikan spinner, tampilkan konten
+        document.getElementById('spinner-container').style.display = 'none';
+        const ionContainer = document.getElementById('setting-container');
+        ionContainer.innerHTML = html;
+        ionContainer.style.display = 'block';
       })
-      .catch(function(err) {
-        console.error('Gagal memuat konten:', err);
+      .catch(function(error) {
+        console.error('Gagal memuat konten:', error);
+        document.getElementById('spinner-container').innerHTML = '<p class="center-content">Gagal memuat data.</p>';
       });
   </script>
