@@ -21,3 +21,166 @@ summary {
   display: none;
 }
 
+.content {
+    min-height: 100dvh;
+    margin-left: 80px;
+    transition: margin-left 0.5s;
+}
+.content.collapsed {
+    margin-left: 260px;
+    transition: margin-left 0.5s;
+}
+#navbar {
+    margin-left: 10px;
+    transition: margin-left 0.5s;
+}
+#navbar.collapsed {
+    margin-left: 190px;
+    transition: margin-left 0.5s;
+}
+.drawer {
+    position: fixed;
+    z-index: 9999;
+}
+.blur {
+    backdrop-filter: blur(10px) saturate(200%);
+    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    background-color: rgba(218, 218, 218, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.drawer .menu_toggle {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 50px;
+    background: #151b26;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.drawer .menu_toggle.collapsed {
+    right: 0;
+    top: 28px;
+    transition: 0.5s;
+}
+.drawer .menu_toggle::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border-bottom-left-radius: 15px;
+    box-shadow: -5px 2px #151b26;
+}
+.drawer .menu_toggle::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border-top-left-radius: 15px;
+    box-shadow: -5px -2px #151b26;
+}
+
+.drawer .menu_toggle span {
+    position: relative;
+    left: -8px;
+    display: inline-block;
+    min-width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.drawer .menu_toggle span::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid aqua;
+    border-right: 2px solid aqua;
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+.drawer .menu_toggle.collapsed span::before {
+    transform: rotate(225deg);
+}
+.drawer .navigationDrawer {
+    position: relative;
+    width: 80px;
+    height: 100dvh;
+    background: #151b26;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 20px 20px 50px #212529c2;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.drawer .navigationDrawer.collapsed {
+    width: 260px;
+}
+.drawer .navigationDrawer .menu {
+    position: relative;
+    width: 100%;
+    padding: 30px 10px;
+    transition: 0.5s;
+}
+.drawer .navigationDrawer .menu li {
+    list-style: none;
+    margin: 15px 0;
+}
+.drawer .navigationDrawer .menu li a {
+    position: relative;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(240, 243, 243);
+    border-radius: 50px;
+}
+.drawer .navigationDrawer .menu li a:hover {
+    backdrop-filter: blur(10px) saturate(200%);
+    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    background-color: rgba(218, 218, 218, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.drawer .navigationDrawer ul.menu li a.active {
+    backdrop-filter: blur(10px) saturate(200%);
+    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    background-color: rgba(218, 218, 218, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.drawer .navigationDrawer .menu li a .icon {
+    position: relative;
+    color: aqua;
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+.drawer .navigationDrawer .menu li a .text {
+    position: relative;
+    color: aqua;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    margin-left: 10px;
+}

@@ -5,11 +5,24 @@
 
   <body class="bg-dark">
 
-  {% include /desktop/sidebar.html %}
-    <main class="main" aria-label="Content">
+  {% include /desktop/drawerSidebar.html %}
+    <main class="content" id="mainContent" aria-label="Content">
   {% include /desktop/navbar.html %}
       {{ content }}
     </main>
+<script>
+  const toggleBtn = document.getElementById('menuToggle');
+  const sidebar = document.getElementById('drawer');
+  const content = document.getElementById('mainContent');
+  const navbar = document.getElementById('navbar');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('collapsed');
+    content.classList.toggle('collapsed');
+    navbar.classList.toggle('collapsed');
+    toggleBtn.classList.toggle('collapsed');
+  });
+</script>
   {% include desktopUIGuard.html %}
   <script src="{{ '/assets/vendor/bootstrap/@popperjs/core/dist/umd/popper.min.js' | relative_url }}"></script>
   </body>

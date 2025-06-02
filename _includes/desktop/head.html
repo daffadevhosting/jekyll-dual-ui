@@ -6,12 +6,13 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-  <link href="{{ '/assets/vendor/bootstrap/dist/css/bootstrap.min.css' | relative_url }}" rel="stylesheet" crossorigin="anonymous">
-  <script src="{{ '/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' | relative_url }}" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
+  <link href="{{ '/assets/vendor/bootstrap/dist/css/bootstrap.min.css' | relative_url }}" rel="stylesheet" crossorigin="anonymous">
+  <script src="{{ '/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' | relative_url }}" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ '/assets/vendor/bootstrap/bootstrap-icons/font/bootstrap-icons.min.css' | relative_url }}">
+
+	<script src="{{ '/assets/js/jquery/jquery-3.6.4.min.js' | relative_url }}"></script>
   {% feed_meta %}
 </head>
